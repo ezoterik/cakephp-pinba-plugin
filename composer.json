@@ -11,7 +11,7 @@
 			"email": "ezoterik.h@gmail.com",
 			"homepage": "http://dev.ezoterik.info",
 			"role": "Developer"
-		},
+		}
 	],
 	"require": {
 		"php": ">=5.3.0",
