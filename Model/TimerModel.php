@@ -34,7 +34,7 @@ class TimerModel extends Model {
 	protected function _getStopwatchEvent($methodName) {
 		$tags = array(
 			'group' => 'orm::' . $methodName,
-			'model' => $this->alias
+			//'model' => $this->alias
 		);
 
 		if ($this->_serverName) {

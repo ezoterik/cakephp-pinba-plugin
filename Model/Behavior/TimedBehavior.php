@@ -58,7 +58,7 @@ class TimedBehavior extends ModelBehavior {
 		$this->_stopwatchEventFind = $this->_stopwatch->start(array(
 			'server' => $this->_serverName,
 			'group' => 'orm::find',
-			'model' => $Model->alias,
+			//'model' => $Model->alias,
 		));
 		return true;
 	}
@@ -80,7 +80,7 @@ class TimedBehavior extends ModelBehavior {
 		$this->_stopwatchEventSave = $this->_stopwatch->start(array(
 			'server' => $this->_serverName,
 			'group' => 'orm::save',
-			'model' => $Model->alias,
+			//'model' => $Model->alias,
 		));
 		return true;
 	}
