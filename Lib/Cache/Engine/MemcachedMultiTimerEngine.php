@@ -165,7 +165,7 @@ class MemcachedMultiTimerEngine extends MemcachedMultiEngine {
 			$e = $this->_getStopwatchEvent('delete');
 		}
 
-		$result = parent::decrement($key);
+		$result = parent::delete($key);
 
 		if ($e !== null) {
 			$e->stop();
