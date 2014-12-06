@@ -119,13 +119,13 @@ class TimerModel extends Model {
 /**
  * {@inheritDoc}
  */
-	public function query($sql) {
+	public function query($sql, $cachequeries = true) {
 		$e = null;
 		if ($this->_stopwatch) {
 			$e = $this->_getStopwatchEvent('query');
 		}
 
-		$result = parent::query($sql);
+		$result = parent::query($sql, $cachequeries);
 
 		if ($e !== null) {
 			$e->stop();
