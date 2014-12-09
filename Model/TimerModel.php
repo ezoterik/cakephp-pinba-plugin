@@ -7,7 +7,7 @@ class TimerModel extends Model {
 	protected $_stopwatch = null;
 
 	/** @var string */
-	protected $_serverName = 'localhost';
+	protected $_serverName = 'localhost:3306';
 
 /**
  * {@inheritDoc}
@@ -16,13 +16,6 @@ class TimerModel extends Model {
 		parent::__construct($id, $table, $ds);
 
 		$this->_stopwatch = new Stopwatch();
-		$dsConfig = $this->getDataSource()->config;
-		if (isset($dsConfig['host'])) {
-			$this->_serverName = $dsConfig['host'];
-			if (isset($dsConfig['port'])) {
-				$this->_serverName .= ':' . $dsConfig['port'];
-			}
-		}
 	}
 
 /**

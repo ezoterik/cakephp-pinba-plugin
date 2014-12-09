@@ -61,4 +61,19 @@ class Stopwatch {
 		$tags = array_merge($this->_initTags, $tags);
 		pinba_timer_add($tags, $time);
 	}
+
+/**
+ * Returns a reference to the Stopwatch singleton object instance.
+ *
+ * @return Stopwatch
+ */
+	public static function getInstance() {
+		static $instance = null;
+
+		if (!$instance) {
+			$instance = new Stopwatch();
+		}
+
+		return $instance;
+	}
 }
