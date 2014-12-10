@@ -2,7 +2,8 @@
 
 class StopwatchEvent {
 
-	protected $_pinbaTimer;
+	/** @var null|resource */
+	protected $_pinbaTimer = null;
 
 /**
  * Construct
@@ -22,5 +23,12 @@ class StopwatchEvent {
 		if ($this->_pinbaTimer) {
 			pinba_timer_stop($this->_pinbaTimer);
 		}
+	}
+
+/**
+ * Destructor
+ */
+	public function __destruct() {
+		$this->stop();
 	}
 }
