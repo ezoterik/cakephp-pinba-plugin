@@ -1,4 +1,5 @@
 <?php
+App::uses('Stopwatch', 'Pinba.Lib');
 App::uses('MemcachedMultiEngine', 'Lib/Cache/Engine');
 
 class MemcachedMultiTimerEngine extends MemcachedMultiEngine {
@@ -16,10 +17,7 @@ class MemcachedMultiTimerEngine extends MemcachedMultiEngine {
  * {@inheritDoc}
  */
 	public function init($settings = array()) {
-		if (isset($settings['pinbaStopwatch'])) {
-			$this->setStopwatch($settings['pinbaStopwatch']);
-			unset($settings['pinbaStopwatch']);
-		}
+		$this->setStopwatch(Stopwatch::getInstance());
 
 		$result = parent::init($settings);
 
